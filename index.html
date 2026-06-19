@@ -23,11 +23,12 @@
 
         #gameContainer {
             position: relative;
-            width: 1200px;
-            height: 800px;
+            width: 90%;
+            max-width: 1400px;
+            aspect-ratio: 16 / 9;
             background: #1a1a1a;
-            border-radius: 10px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5);
             overflow: hidden;
         }
 
@@ -39,25 +40,28 @@
 
         #ui {
             position: absolute;
-            top: 20px;
-            left: 20px;
-            right: 20px;
+            top: 25px;
+            left: 25px;
+            right: 25px;
             font-size: 18px;
             z-index: 10;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
         }
 
         #score {
-            font-size: 32px;
+            font-size: 36px;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             color: #ffd700;
+            letter-spacing: 2px;
         }
 
         #level, #timer {
             display: inline-block;
-            margin-right: 30px;
-            font-size: 18px;
+            margin-right: 35px;
+            font-size: 20px;
+            color: #fff;
+            font-weight: bold;
         }
 
         #menu {
@@ -66,7 +70,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.95);
+            background: rgba(0, 0, 0, 0.98);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -83,41 +87,36 @@
         }
 
         .menu-content h1 {
-            font-size: 48px;
+            font-size: 56px;
             margin-bottom: 30px;
             color: #ffd700;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+            letter-spacing: 3px;
         }
 
         .menu-content p {
-            font-size: 18px;
+            font-size: 20px;
             margin-bottom: 40px;
             color: #ccc;
         }
 
-        .button-group {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-
         button {
-            padding: 15px 30px;
+            padding: 15px 35px;
             font-size: 18px;
-            background: #667eea;
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
-            border: none;
-            border-radius: 5px;
+            border: 2px solid #ffd700;
+            border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s ease;
             text-transform: uppercase;
             font-weight: bold;
+            margin: 10px;
         }
 
         button:hover {
-            background: #764ba2;
-            transform: scale(1.05);
+            transform: scale(1.08);
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
         }
 
         button:active {
@@ -134,65 +133,67 @@
         }
 
         .custom-option {
-            padding: 15px;
+            padding: 20px;
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
+            border-radius: 8px;
             border: 2px solid #667eea;
+            backdrop-filter: blur(10px);
         }
 
         .custom-option label {
             display: block;
             margin-bottom: 10px;
             font-weight: bold;
+            color: #ffd700;
         }
 
         .custom-option select, .custom-option input {
             width: 100%;
-            padding: 8px;
+            padding: 10px;
             background: #333;
             color: #fff;
-            border: 1px solid #667eea;
-            border-radius: 3px;
-        }
-
-        #levelSelect {
-            margin: 20px 0;
-            font-size: 18px;
-            padding: 10px 20px;
+            border: 2px solid #667eea;
+            border-radius: 5px;
+            font-size: 14px;
         }
 
         .accessories-preview {
             margin-top: 20px;
-            padding: 15px;
+            padding: 20px;
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
+            border-radius: 8px;
             min-height: 80px;
+            border: 2px solid #ffd700;
         }
 
         .accessories-preview h3 {
             color: #ffd700;
             margin-bottom: 10px;
+            font-size: 18px;
         }
 
         .controls {
             position: absolute;
-            bottom: 20px;
-            left: 20px;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 15px;
-            border-radius: 5px;
+            bottom: 25px;
+            left: 25px;
+            background: rgba(0, 0, 0, 0.85);
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #667eea;
             font-size: 14px;
             z-index: 10;
         }
 
         .controls h3 {
             color: #ffd700;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            font-size: 16px;
         }
 
         .control-item {
-            margin: 5px 0;
+            margin: 8px 0;
             color: #ccc;
+            line-height: 1.6;
         }
 
         #pauseMenu {
@@ -201,42 +202,48 @@
             left: 50%;
             transform: translate(-50%, -50%);
             background: rgba(0, 0, 0, 0.95);
-            padding: 40px;
-            border-radius: 10px;
+            padding: 50px;
+            border-radius: 15px;
             text-align: center;
             z-index: 99;
             display: none;
-            border: 3px solid #667eea;
+            border: 4px solid #ffd700;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
         }
 
         #pauseMenu h2 {
-            font-size: 36px;
+            font-size: 44px;
             margin-bottom: 30px;
             color: #ffd700;
-        }
-
-        .game-over {
-            display: none;
+            letter-spacing: 2px;
         }
 
         .stats {
             position: absolute;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 15px;
-            border-radius: 5px;
+            bottom: 25px;
+            right: 25px;
+            background: rgba(0, 0, 0, 0.85);
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #667eea;
             z-index: 10;
             font-size: 14px;
         }
 
         .stat-item {
-            margin: 5px 0;
+            margin: 8px 0;
             color: #ffd700;
+            font-weight: bold;
         }
 
         .modal-hidden {
             display: none !important;
+        }
+
+        h2 {
+            font-size: 32px;
+            color: #ffd700;
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -247,48 +254,48 @@
         <!-- Main Menu -->
         <div id="menu">
             <div class="menu-content">
-                <h1>⚽ SOCCER GAME ⚽</h1>
-                <p>Control your character and score goals against NPCs!</p>
+                <h1>⚽ 3D SOCCER GAME ⚽</h1>
+                <p>Score goals and unlock accessories!</p>
 
-                <div id="mainMenu" class="menu-hidden">
-                    <button onclick="showCustomization()">Play Game</button>
-                    <button onclick="showControls()">Controls</button>
+                <div id="mainMenu">
+                    <button onclick="showCustomization()">▶ PLAY GAME</button>
+                    <button onclick="showControls()">⚙ CONTROLS</button>
                 </div>
 
                 <div id="customizationMenu" class="menu-hidden">
                     <h2>Customize Your Player</h2>
                     <div class="customization">
                         <div class="custom-option">
-                            <label for="playerName">Player Name:</label>
+                            <label for="playerName">🎮 Player Name:</label>
                             <input type="text" id="playerName" placeholder="Enter your name" value="Player">
                         </div>
                         <div class="custom-option">
-                            <label for="playerColor">Jersey Color:</label>
+                            <label for="playerColor">👕 Jersey Color:</label>
                             <select id="playerColor">
-                                <option value="#ff0000">Red</option>
-                                <option value="#0000ff">Blue</option>
-                                <option value="#ffff00">Yellow</option>
-                                <option value="#00ff00">Green</option>
-                                <option value="#ff00ff">Purple</option>
+                                <option value="#ff0000">🔴 Red</option>
+                                <option value="#0000ff">🔵 Blue</option>
+                                <option value="#ffff00">🟡 Yellow</option>
+                                <option value="#00ff00">🟢 Green</option>
+                                <option value="#ff00ff">🟣 Purple</option>
                             </select>
                         </div>
                         <div class="custom-option">
-                            <label for="difficulty">Difficulty Level:</label>
+                            <label for="difficulty">📊 Difficulty Level:</label>
                             <select id="difficulty">
-                                <option value="1">1 - Easy</option>
+                                <option value="1">1 - Easy 😊</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
-                                <option value="4">4 - Medium</option>
+                                <option value="4">4 - Medium 🙂</option>
                                 <option value="5">5</option>
                                 <option value="6">6</option>
-                                <option value="7">7 - Hard</option>
+                                <option value="7">7 - Hard 😐</option>
                                 <option value="8">8</option>
                                 <option value="9">9</option>
-                                <option value="10">10 - Expert</option>
+                                <option value="10">10 - Expert 😰</option>
                             </select>
                         </div>
                         <div class="custom-option">
-                            <label for="accessories">Starting Accessory:</label>
+                            <label for="accessories">🎀 Starting Accessory:</label>
                             <select id="accessories">
                                 <option value="none">None</option>
                                 <option value="headband">Headband</option>
@@ -298,30 +305,36 @@
                         </div>
                     </div>
                     <div class="accessories-preview">
-                        <h3>Your Accessories:</h3>
+                        <h3>📦 Your Accessories:</h3>
                         <p id="accessoriesDisplay">None - Unlock by scoring goals!</p>
                     </div>
-                    <div style="margin-top: 20px;">
-                        <button onclick="startGame()">Start Game</button>
-                        <button onclick="showMainMenu()">Back</button>
+                    <div style="margin-top: 30px;">
+                        <button onclick="startGame()">🚀 START GAME</button>
+                        <button onclick="showMainMenu()">⬅ BACK</button>
                     </div>
                 </div>
 
                 <div id="controlsMenu" class="menu-hidden">
-                    <h2>Controls</h2>
-                    <div style="text-align: left; display: inline-block; margin: 20px;">
-                        <p><strong>W / A / S / D</strong> - Move</p>
-                        <p><strong>Space</strong> - Jump</p>
-                        <p><strong>Mouse Move</strong> - Look Around</p>
-                        <p><strong>Left Click</strong> - Kick Ball</p>
-                        <p><strong>ESC</strong> - Pause/Menu</p>
-                        <p><strong>E</strong> - Sprint</p>
-                        <hr style="margin: 20px 0; border: none; border-top: 1px solid #667eea;">
-                        <p style="color: #ffd700;"><strong>Goal:</strong> Score as many goals as possible in the time limit!</p>
-                        <p><strong>Tips:</strong> Get close to the ball and kick it into the goal. Unlock accessories as you score!</p>
+                    <h2>🎮 Controls</h2>
+                    <div style="text-align: left; display: inline-block; margin: 30px; background: rgba(255,255,255,0.05); padding: 30px; border-radius: 10px; border: 2px solid #667eea;">
+                        <h3 style="color: #ffd700; margin-bottom: 20px;">⌨️ KEYBOARD CONTROLS</h3>
+                        <p><strong>W</strong> - Move Forward</p>
+                        <p><strong>A</strong> - Move Left</p>
+                        <p><strong>S</strong> - Move Backward</p>
+                        <p><strong>D</strong> - Move Right</p>
+                        <p><strong>SPACE</strong> - Jump & Kick (when near ball)</p>
+                        <p><strong>E</strong> - Sprint (faster movement)</p>
+                        <p><strong>ESC</strong> - Pause Game</p>
+                        <hr style="margin: 25px 0; border: none; border-top: 2px solid #667eea;">
+                        <h3 style="color: #ffd700; margin-bottom: 20px; margin-top: 20px;">🎯 HOW TO PLAY</h3>
+                        <p>⚽ <strong>Kick Ball:</strong> Get close to the ball and press SPACE to kick it</p>
+                        <p>🟡 <strong>Score Goals:</strong> Kick into the YELLOW goal zone</p>
+                        <p>🎀 <strong>Unlock Accessories:</strong> Score 3, 6, and 10 goals to unlock items</p>
+                        <p>⏱️ <strong>Time Limit:</strong> You have 2 minutes per game</p>
+                        <p>🏆 <strong>Difficulty:</strong> Higher levels = More NPCs & Faster opponents</p>
                     </div>
-                    <div style="margin-top: 30px;">
-                        <button onclick="showMainMenu()">Back</button>
+                    <div style="margin-top: 40px;">
+                        <button onclick="showMainMenu()">⬅ BACK TO MENU</button>
                     </div>
                 </div>
             </div>
@@ -329,9 +342,9 @@
 
         <!-- Pause Menu -->
         <div id="pauseMenu">
-            <h2>PAUSED</h2>
-            <button onclick="resumeGame()" style="margin: 10px; padding: 12px 24px; font-size: 16px;">Resume</button>
-            <button onclick="goToMainMenu()" style="margin: 10px; padding: 12px 24px; font-size: 16px;">Main Menu</button>
+            <h2>⏸️ PAUSED</h2>
+            <button onclick="resumeGame()" style="margin: 15px; padding: 15px 30px; font-size: 18px;">▶ RESUME GAME</button>
+            <button onclick="goToMainMenu()" style="margin: 15px; padding: 15px 30px; font-size: 18px;">🏠 MAIN MENU</button>
         </div>
 
         <!-- UI Overlay -->
@@ -343,16 +356,16 @@
 
         <!-- Stats -->
         <div class="stats">
-            <div class="stat-item">FPS: <span id="fps">0</span></div>
-            <div class="stat-item">Distance: <span id="distance">0</span>m</div>
+            <div class="stat-item">📊 FPS: <span id="fps">0</span></div>
+            <div class="stat-item">📏 Distance: <span id="distance">0</span>m</div>
         </div>
 
         <!-- Controls Info -->
         <div class="controls">
-            <h3>Controls</h3>
-            <div class="control-item">W/A/S/D - Move | Space - Jump</div>
-            <div class="control-item">E - Sprint | Click - Kick</div>
-            <div class="control-item">ESC - Pause | Mouse - Look</div>
+            <h3>⌨️ QUICK CONTROLS</h3>
+            <div class="control-item">W/A/S/D - Move | SPACE - Jump/Kick</div>
+            <div class="control-item">E - Sprint | ESC - Pause</div>
+            <div class="control-item">🟡 YELLOW Goal = Score! (Get close & press SPACE)</div>
         </div>
     </div>
 
